@@ -11,6 +11,7 @@ use Mix.Config
 # You can configure your application as:
 #
 #     config :noaa, key: :value
+      config :noaa, noaa_station_url: "https://w1.weather.gov/xml/current_obs/display.php?stid="
 #
 # and access this configuration in your application as:
 #
@@ -18,7 +19,7 @@ use Mix.Config
 #
 # You can also configure a third-party app:
 #
-#     config :logger, level: :info
+    config :logger, compile_time_purge_level: :info
 #
 
 # It is also possible to import configuration files, relative to this
