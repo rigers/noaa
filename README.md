@@ -1,21 +1,12 @@
 # Noaa
 
-**TODO: Add description**
+Fetch latest enviromental data from weather.gov for a given `station_id`. Default station id is: `KLGA`
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `noaa` to your list of dependencies in `mix.exs`:
+Install dependencies using `mix deps.get`
 
-```elixir
-def deps do
-  [
-    {:noaa, "~> 0.1.0"}
-  ]
-end
-```
+Run using `iex -S mix`
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/noaa](https://hexdocs.pm/noaa).
+To generate executable use `mix escript.build()` then use `./noaa [ -h | station_id ]`
 
