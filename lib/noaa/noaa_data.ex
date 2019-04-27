@@ -1,6 +1,27 @@
 defmodule Noaa.NoaaData do
-    
+    @moduledoc """
+    Handle fetching data from weather.gov with a given `station id`. Respond with a map of environmental data.
+    """
     require Logger
+
+    @doc """
+    Fetch data from `station_id` and report with a map.
+
+    ## Examples
+
+        iex> Noaa.NoaaData.fetch("KLGA")
+        %{
+        location: "New York, La Guardia Airport, NY",
+        relative_humidity: "27",
+        station_id: "KLGA",
+        temp_c: "13.3",
+        temp_f: "56.0",
+        weather: "Partly Cloudy",
+        wind_mph: "17.3",
+        windchill_c: "11"
+        }
+
+    """
 
     def fetch(station_id) do
         noaa_url(station_id)
@@ -10,11 +31,11 @@ defmodule Noaa.NoaaData do
 
     @noaa_station_url Application.get_env(:noaa, :noaa_station_url)
 
-    def noaa_url(station_id) do
+    defp noaa_url(station_id) do
         "#{@noaa_station_url}#{station_id}"
     end
 
-    def handle_response({_, %{status_code: status_code, body: body}}) do
+    defp handle_response({_, %{status_code: status_code, body: body}}) do
         Logger.info("Got response: status code=#{status_code}")
         Logger.debug(fn -> inspect(body) end)
 
