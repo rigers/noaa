@@ -4,9 +4,11 @@ Fetch latest enviromental data from weather.gov for a given `station_id`. Defaul
 
 ## Installation
 
-Install dependencies using `mix deps.get`
+Get dependencies using `mix deps.get`
 
-Run using `iex -S mix`
+Run using `iex -S mix`, this will also install dependencies.
 
-To generate executable use `mix escript.build()` then use `./noaa [ -h | station_id ]`
+Generate executable with `mix escript.build()`, then use `./noaa [ -h | station_id ]`
+
+Generate docs with `mix docs`
 
